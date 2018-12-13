@@ -1,0 +1,105 @@
+.tweet-container {
+  opacity: 0.5;
+  border: solid;
+  border-radius: 25px;
+  background-color:   #D3D3D3;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 480px;
+  margin-top: 5px;
+}
+
+.tweet-container:hover {
+  opacity: 1;
+}
+
+.tweet-container:hover span.icons {
+  opacity: 1;
+}
+
+/*holds img-box and headerholder */
+.tweet-header {
+  background-color: #D3D3D3;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  width: auto;
+  height: 120px;
+}
+
+/*img*/
+.img {
+  float: left;
+  border-radius: 25px;
+  width: 110px;
+  height: 110px;
+  padding: 10px;
+}
+
+/*name*/
+span.name {
+  float: left;
+  font-weight: bold;
+  font-size: 30px;
+  font-color: #E6E6FA;
+  padding: 6px;
+
+}
+
+/*handle*/
+span.handle {
+  float: right;
+  padding: 10px;
+}
+
+/*display-box*/
+.tweet-display-box {
+  width: auto;
+  height: 100px;
+  background-color: #f7f2ee;
+}
+
+
+/*the actual field that display the tweet */
+p.tweet-display {
+  height: 100px;
+  padding: 10px;
+}
+
+.tweet-footer {
+  width: auto;
+  height: 80px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+
+}
+.tweet-footer:before {
+  padding-top: 20px;
+  display: inline-block;
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid darkgrey;
+  background-color: #f7f2ee;
+}
+
+span.days-ago {
+  float: left;
+  padding: 6px;
+}
+
+span.icons {
+  padding: 10px;
+  float: right;
+  margin-right: 6px;
+  opacity: 0;
+}
+
+.icons i {
+  padding: 4px;
+}
+
+
+/*make them appear on container not just the icons*/
+span.icons:hover {
+  opacity: 1;
+}
