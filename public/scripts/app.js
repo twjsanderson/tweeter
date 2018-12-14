@@ -5,6 +5,8 @@ function escape(str) {
   return div.innerHTML;
 }
 
+//let date = moment(tweet.created_at).fromNow();
+
 function createTweetElement(obj) {
   let article = `<article class="tweet-container">
     <header class="tweet-header">
