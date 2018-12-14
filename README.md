@@ -7,6 +7,8 @@ Built using HTML, CSS, JS, jQuery and AJAX on the front-end with Node, Express a
 ## Main Page
 
 !["Main page where you can start tweeting"](https://github.com/twjsanderson/tweeter/blob/master/public/images/Screenshot%20from%202018-12-14%2013-30-07.png)
+!["The textarea prepped with a brand new tweet"](https://github.com/twjsanderson/tweeter/blob/master/public/images/Screenshot%20from%202018-12-14%2013-39-42.png)
+
 
 ## Features
 
