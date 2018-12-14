@@ -98,7 +98,6 @@ span.icons {
   padding: 4px;
 }
 
-
 /*make them appear on container not just the icons*/
 span.icons:hover {
   opacity: 1;

@@ -5,9 +5,8 @@ function escape(str) {
   return div.innerHTML;
 }
 
-//let date = moment(tweet.created_at).fromNow();
-
 function createTweetElement(obj) {
+  let date = moment(obj.created_at).fromNow();
   let article = `<article class="tweet-container">
     <header class="tweet-header">
       <img class="img" src=${obj.user.avatars.regular}>
@@ -18,7 +17,7 @@ function createTweetElement(obj) {
       <p class="tweet-display">${escape(obj.content.text)}</p>
     </div>
       <footer name="tweet-footer" class="tweet-footer">
-        <span class="days-ago">${obj.created_at}</span>
+        <span class="days-ago">${date}</span>
         <span class="icons"><i class="fas fa-flag"></i><i class="fas fa-sync-alt"></i><i class="fas fa-heart"></i></span>
     </footer>
   </article>
@@ -29,6 +28,7 @@ function createTweetElement(obj) {
 
 $(document).ready(function() {
 
+  $(".container").hide();
   $(".compose").click(function() {
     $(".container").slideToggle("slow");
     $("#text").focus();
@@ -38,21 +38,21 @@ $(document).ready(function() {
     event.preventDefault();
     let tweetLength = $("textarea").val().length
     if (tweetLength === 0) {
-        $("#cognito").text("You cannot tweet a blank field").css( "display")
-        $("#cognito").slideToggle("fast", function () {
-          $("#cognito").fadeOut(5000)
-        });
+      $("#cognito").text("You cannot tweet a blank field").css("display")
+      $("#cognito").slideToggle("fast", function () {
+        $("#cognito").fadeOut(5000)
+      });
     } else if (tweetLength > 140) {
-      $("#cognito").text("You cannot tweet more than 140 characters").css( "display")
+      $("#cognito").text("You cannot tweet more than 140 characters").css("display")
       $("#cognito").slideToggle("fast", function () {
         $("#cognito").fadeOut(5000)
       });
     } else {
       $.ajax("/tweets", { method: "POST", data : $(this).serialize()})
-        .then(function() {
-          $('#text').val('')
-          loadTweets()}
-
+      .then(function() {
+        $('#text').val('')
+        $(".counter").text(140)
+        loadTweets()}
       );
     }
   });
@@ -66,14 +66,12 @@ $(document).ready(function() {
   // fetching tweets from localhost:8080/tweets
   function loadTweets() {
     $.ajax('/tweets', { method: 'GET' })
-        .then(function(data) {
-          $(".tweets").empty()
-          renderTweets(data)
-        });
+    .then(function(data) {
+      $(".tweets").empty()
+      renderTweets(data)
+    });
   };
-
   loadTweets();
-
 });
 
 
