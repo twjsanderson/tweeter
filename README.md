@@ -6,7 +6,7 @@ Built using HTML, CSS, JS, jQuery and AJAX on the front-end with Node, Express a
 
 ## Main Page
 
-!["Main page where you can start tweeting"](https://github.com/twjsanderson/tinyAppPro/blob/master/docs/urls.png?raw=true)
+!["Main page where you can start tweeting"](https://github.com/twjsanderson/tweeter/blob/master/public/images/Screenshot%20from%202018-12-14%2013-30-07.png)
 
 ## Features
 
